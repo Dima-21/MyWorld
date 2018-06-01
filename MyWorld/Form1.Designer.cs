@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.components = new System.ComponentModel.Container();
+            this.ProgressBar = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,17 +48,22 @@
             this.LSell = new System.Windows.Forms.Label();
             this.LHire = new System.Windows.Forms.Label();
             this.LSend = new System.Windows.Forms.Label();
+            this.LStats = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.BStart = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TrackSell)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TrackHire)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TrackSend)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // progressBar1
+            // ProgressBar
             // 
-            this.progressBar1.Location = new System.Drawing.Point(13, 13);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(308, 23);
-            this.progressBar1.TabIndex = 0;
+            this.ProgressBar.Location = new System.Drawing.Point(13, 13);
+            this.ProgressBar.Maximum = 1000;
+            this.ProgressBar.Name = "ProgressBar";
+            this.ProgressBar.Size = new System.Drawing.Size(308, 23);
+            this.ProgressBar.TabIndex = 0;
             // 
             // label1
             // 
@@ -222,11 +228,39 @@
             this.LSend.TabIndex = 18;
             this.LSend.Text = "0";
             // 
+            // LStats
+            // 
+            this.LStats.AutoSize = true;
+            this.LStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LStats.ForeColor = System.Drawing.Color.Red;
+            this.LStats.Location = new System.Drawing.Point(194, 51);
+            this.LStats.Name = "LStats";
+            this.LStats.Size = new System.Drawing.Size(0, 20);
+            this.LStats.TabIndex = 19;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // BStart
+            // 
+            this.BStart.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BStart.Location = new System.Drawing.Point(211, 82);
+            this.BStart.Name = "BStart";
+            this.BStart.Size = new System.Drawing.Size(97, 40);
+            this.BStart.TabIndex = 20;
+            this.BStart.Text = "Новая игра";
+            this.BStart.UseVisualStyleBackColor = true;
+            this.BStart.Visible = false;
+            this.BStart.Click += new System.EventHandler(this.BStart_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(338, 332);
+            this.Controls.Add(this.BStart);
+            this.Controls.Add(this.LStats);
             this.Controls.Add(this.LSend);
             this.Controls.Add(this.LHire);
             this.Controls.Add(this.LSell);
@@ -245,12 +279,13 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.ProgressBar);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "My World";
             ((System.ComponentModel.ISupportInitialize)(this.TrackSell)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TrackHire)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TrackSend)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,7 +293,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar ProgressBar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -277,6 +312,9 @@
         private System.Windows.Forms.Label LSell;
         private System.Windows.Forms.Label LHire;
         private System.Windows.Forms.Label LSend;
+        private System.Windows.Forms.Label LStats;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button BStart;
     }
 }
 

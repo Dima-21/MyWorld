@@ -11,11 +11,13 @@ namespace MyWorld
         public int Human { get; set; }
         public int Warriors { get; set; }
         public int Money { get; set; }
+        public int Lands { get; set; }
         public World()
         {
             Human = 1000;
             Warriors = 50;
             Money = 8000;
+            Lands = 70;
         }
     }
 }
